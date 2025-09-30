@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202101/myntra_logo_660_300121011207.jpg?size=948:533" alt="Myntra Logo">
+                <h1>Search on Myntra</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <form action="/review" method="POST">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search for a product" name="content" id="content">
+                       <br>
+                        <div class = "input-group-append"
+                        style="padding-top: 20px;">
+                            <input type="text" class="form-control" placeholder="No of product to scrape" name="prod_no" id="prod_no">
+
+
+                        </div>
+                        <div class="input-group-append"
+                        style="padding-top: 80px;
+                        padding-left: 50px;">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

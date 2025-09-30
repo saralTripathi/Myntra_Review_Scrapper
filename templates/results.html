@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Review Page</title>
+      
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      
+      
+            <link rel="stylesheet" href="./style.css">
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+      
+      </head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Results</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        {% for title in titles %}
+                            <th>{{ title }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% if rows is not none %}
+                    {% for review in rows %}
+                    <tr>
+                        {% for data in review %}
+                            <td>{{ data }}</td>
+                        {% endfor %}
+                        
+                    
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+                        
+            </table>
+        </div>
+    </div>
+
+    <!-- Link Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
